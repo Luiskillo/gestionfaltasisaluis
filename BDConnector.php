@@ -23,8 +23,8 @@
         {
             $this->servername = "localhost";
             $this->database = "gestionfaltasisaluis";
-            $this->user = "root";
-            $this->pass = "pass";
+            $this->user = "user"; //CUIDADO
+            $this->pass = "pass"; //CUIDADO
         }
 
         public function conectarUsuario($nombre)

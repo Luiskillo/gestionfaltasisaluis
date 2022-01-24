@@ -1,46 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <title>Instituto faltas - Servidor</title>
-    <link rel="stylesheet" href="estilos.css">
+session_start();
 
-</head>
+require 'BDConnector.php';
+require 'funciones.php';
 
-<body>
+$opt = $_SESSION["opt"];
+$name = $_SESSION["name"];
 
-    <?php
+$c = new ConectorBD();
 
-    session_start();
+//Hay que ver como sacar el rol de profesor/director --- Hecho ---
+$arrayRol = $c->getRol($name);
+$sizeArrayRol = count($arrayRol);
 
-    require 'BDConnector.php';
-    require 'funciones.php';
+switch ($opt) {
+    case "inicio_sesion":
 
-    $opt = $_SESSION["opt"];
-    $name = $_SESSION["name"];
+        if ($name != null && $arrayRol[0][0] != null) {
+            if ($arrayRol[0][0] == "Director") {
+                $_SESSION["opt_user"] = "dir";
 
-    $c = new ConectorBD();
-
-    //Hay que ver como sacar el rol de profesor/director
-    $arrayRol = $c->getRol($name);
-    $sizeArrayRol = count($arrayRol);
-
-    switch ($opt) {
-        case "inicio_sesion":
-
-            if ($name != null && $arrayRol[0][0] != null) {
-                if ($arrayRol[0][0] == "Director") {
-                    echo "dire";
-                } else {
-                    echo "prof";
-                }
+                $url = "registrarFalta.php";
+                redirect($url);
             } else {
-                $url = "login.html";
+                $_SESSION["opt_user"] = "prof";
+
+                $url = "registrarFalta.php";
                 redirect($url);
             }
+        } else {
+            $url = "login.html";
+            redirect($url);
+        }
 
-            break;
-    }
-    ?> <br><button><a href="login.html">Volver al inicio</a></button>
+        break;
+}
+?> <br><button><a href="login.html">Volver al inicio</a></button>
 </body>
