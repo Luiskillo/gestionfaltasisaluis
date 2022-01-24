@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <title>Instituto faltas - Servidor</title>
     <link rel="stylesheet" href="estilos.css">
+    
 </head>
 
 <body>
-
+<p>hola</p>
 <?php
 require 'BDConnector.php';
 
