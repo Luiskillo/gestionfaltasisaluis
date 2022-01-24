@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Instituto faltas - Servidor</title>
     <link rel="stylesheet" href="estilos.css">
-    
+
 </head>
 
 <body>
@@ -26,5 +27,5 @@ require 'BDConnector.php';
     }
 ?>
 
-<br><button><a href="login.html">Volver al inicio</a></button>
+    <br><button><a href="login.html">Volver al inicio</a></button>
 </body>
