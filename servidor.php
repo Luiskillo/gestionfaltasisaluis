@@ -11,7 +11,7 @@
 <?php
 require 'BDConnector.php';
 
-//JALAME LA PINGA PRINGAO
+//Hola?
 //Pra
 //PUTA PUTA PUTA
 
