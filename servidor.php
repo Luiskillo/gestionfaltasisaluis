@@ -12,10 +12,6 @@
 <?php
 
 require 'BDConnector.php';
-
-//Actu Isabel
-//actu luis
-
     $option = $_POST['option'];
     //Hay que ver como sacar el rol de profesor/director
 
