@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<p>hola</p>
+<p>hola2</p>
 <?php
 require 'BDConnector.php';
 
