@@ -28,6 +28,7 @@
 
     <form action="sesion.php">
         <select name="destino">
+            hola;
             <option selected="selected" disabled="disabled" value="">Selecciona Grupo</option>
             <?php for ($i = 0; $i < $sizeArrayGrupos; $i++) { ?>
                 <option value="<?php print_r($arrayGrupos[$i][0])  ?>"><?php print_r($arrayGrupos[$i][0]) ?></option>
