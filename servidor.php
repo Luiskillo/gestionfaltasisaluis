@@ -10,7 +10,6 @@
 
 <body>
 
-<<<<<<< HEAD
     <?php
 
     session_start();
@@ -26,14 +25,6 @@
     //Hay que ver como sacar el rol de profesor/director
     $arrayRol = $c->getRol($name);
     $sizeArrayRol = count($arrayRol);
-
-=======
-<?php
-
-require 'BDConnector.php';
-    $option = $_POST['option'];
-    $conector = new ConectorBD();
->>>>>>> 2adbb3da882b7ee6c261149cfb8a54dcd999c59a
 
     switch ($opt) {
         case "inicio_sesion":
@@ -52,7 +43,5 @@ require 'BDConnector.php';
 
             break;
     }
-?>
-
-    <br><button><a href="login.html">Volver al inicio</a></button>
+    ?> <br><button><a href="login.html">Volver al inicio</a></button>
 </body>
