@@ -8,8 +8,10 @@
 </head>
 
 <body>
-<p>hola2</p>
+
 <?php
+
+//hola isabel
 require 'BDConnector.php';
 //Cambio
     $option = $_POST['option'];
