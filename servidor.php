@@ -11,8 +11,8 @@ $name = $_SESSION["name"];
 $c = new ConectorBD();
 
 //Hay que ver como sacar el rol de profesor/director --- Hecho ---
+
 $arrayRol = $c->getRol($name);
-$sizeArrayRol = count($arrayRol);
 
 switch ($opt) {
     case "inicio_sesion":
@@ -36,5 +36,3 @@ switch ($opt) {
 
         break;
 }
-?> <br><button><a href="login.html">Volver al inicio</a></button>
-</body>
