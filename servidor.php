@@ -14,8 +14,6 @@
 
 require 'BDConnector.php';
     $option = $_POST['option'];
-    //Hay que ver como sacar el rol de profesor/director
-
     $conector = new ConectorBD();
 
     switch ($option) {
