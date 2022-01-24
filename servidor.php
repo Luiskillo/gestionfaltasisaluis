@@ -12,18 +12,36 @@
 
     <?php
 
+    session_start();
+
     require 'BDConnector.php';
+    require 'funciones.php';
 
-    $option = $_POST['option'];
+    $opt = $_SESSION["opt"];
+    $name = $_SESSION["name"];
+
+    $c = new ConectorBD();
+
     //Hay que ver como sacar el rol de profesor/director
+    $arrayRol = $c->getRol($name);
+    $sizeArrayRol = count($arrayRol);
 
-    $conector = new ConectorBD();
 
-    switch ($option) {
+    switch ($opt) {
         case "inicio_sesion":
-            $nombre = $_POST['nombre'];
 
-            $conector->conectarUsuario($nombre);
+            if ($name != null && $arrayRol[0][0] != null) {
+                if ($arrayRol[0][0] == "Director") {
+                    echo "dire";
+                } else {
+                    echo "prof";
+                }
+            } else {
+                $url = "login.html";
+                redirect($url);
+            }
+
+
             break;
     }
     ?>
