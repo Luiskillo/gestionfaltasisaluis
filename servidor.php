@@ -12,6 +12,7 @@
 require 'BDConnector.php';
 
 //JALAME LA PINGA PRINGAO
+//Pra
 
     $option = $_POST['option'];
     //Hay que ver como sacar el rol de profesor/director
