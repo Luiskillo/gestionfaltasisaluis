@@ -10,16 +10,31 @@
 </head>
 
 <body>
+    <?php
+    session_start();
+    ?>
     <h2>BBDD Faltas Instituto - Inicio de sesión</h2>
 
     <form action="sesion.php" method="post">
         <input type="hidden" name="option" value="inicio_sesion" />
+        <input type="hidden" name="optContinuar" value="default" />
         <div class="recuadro">
             <input class="usuario" type="text" name="nombre" maxlength="50" placeholder="Usuario" />
         </div>
         <br />
         <input id="enviar" type="submit" />
     </form>
+
+    <?php
+    if (isset($_SESSION["usarioCorrecto"])) {
+        if ($_SESSION["usarioCorrecto"] == false) {
+    ?>
+            <p>Introduzca bien el nombre</p>
+    <?php
+        }
+    }
+    ?>
+
 </body>
 
 </html>
