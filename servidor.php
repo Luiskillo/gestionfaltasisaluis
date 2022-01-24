@@ -40,7 +40,6 @@
                 redirect($url);
             }
 
-
             break;
     }
     ?> <br><button><a href="login.html">Volver al inicio</a></button>
