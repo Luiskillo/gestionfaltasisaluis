@@ -11,7 +11,7 @@
 <?php
 require 'BDConnector.php';
 
-//JALAME LA PINGA PRINGAO
+//Hola?
 //Pra
 
     $option = $_POST['option'];
