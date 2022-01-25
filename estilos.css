@@ -4,13 +4,41 @@
 
 h2 {
     text-align: center;
-    color: gray;
+    color: #3e3d53;
 }
 
 form {
     width: 50%;
     margin-left: 25%;
     margin-right: 25%;
+}
+
+input,
+select {
+    cursor: pointer;
+}
+
+
+/* boton login */
+
+#enviar {
+    color: #3e3d53;
+    border: 0.1em solid #3e3d53;
+    border-radius: 6px;
+    padding: 6px 8px;
+    display: inline-block;
+    font-size: 14px;
+    transition: ease-out 0.5s;
+}
+
+#enviar:hover {
+    box-shadow: inset 400px 0 0 0 #3e3d53;
+    color: #c5c6d0;
+}
+
+#nombreErroneo {
+    text-align: center;
+    color: red;
 }
 
 .recuadro,
@@ -29,4 +57,11 @@ form {
     width: 20%;
     margin-right: 40%;
     margin-left: 40%;
+}
+
+table {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1em;
 }

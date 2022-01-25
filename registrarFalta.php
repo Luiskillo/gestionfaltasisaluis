@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css" />
     <title>Registrar Falta</title>
 </head>
 
@@ -81,7 +82,7 @@
 
     ?>
 
-    <h1>Hola <?php echo $nombre ?></h1>
+    <h2>Hola <?php echo $nombre ?></h2>
 
     <form action="sesion.php" method="post">
 
@@ -197,12 +198,12 @@
         <input type="hidden" name="historial" value="historial">
         <input type="submit" value="Ver Historial">
     </form>
-
     <?php
     if (isset($historial)) {
         if ($historial == "historial") {
     ?>
-            <table>
+            
+            <table id="tablaFaltas">
                 <tr>
                     <th>Id</th>
                     <th>Alumno</th>
@@ -229,6 +230,7 @@
                 }
                 ?>
             </table>
+            </div>
     <?php
         }
     } ?>

@@ -29,7 +29,7 @@
     if (isset($_SESSION["usarioCorrecto"])) {
         if ($_SESSION["usarioCorrecto"] == false) {
     ?>
-            <p>Introduzca bien el nombre</p>
+            <p id="nombreErroneo">El nombre introducido no es correcto o el campo no ha sido rellenado</p>
     <?php
         }
     }
