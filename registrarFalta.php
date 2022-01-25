@@ -11,6 +11,11 @@
 
 <body>
 
+    <!--
+        Cuando metes los datos por segunda vez y si no selecionas nada el valor en blanco toma el valor anterior
+        mas info en linea 184
+    -->
+
     <?php
     session_start();
 
@@ -85,7 +90,7 @@
     <h1>Hola <?php echo $nombre ?></h1>
 
     <form action="sesion.php" method="post">
-    <h3>Agregar nueva falta</h3>
+        <h3>Agregar nueva falta</h3>
         <?php
 
         switch ($optContinuar) {
@@ -176,6 +181,8 @@
                 $fecha = date("Y/m/d");
 
                 $insertarFalta = $c->insertarFalta($agregarIdExtra, $alumno, $nombre, $codGravedad, $falta, $sancion, $circustancia, $fecha, $observacion);
+                /*Borrar la indormacion conforme entra en la query, menos nombre del prod ($nombre) --- $_sesion = " "*/
+
             ?>
                 <input type="hidden" name="optContinuar" value="continuar3">
 
@@ -195,47 +202,49 @@
 
     <form action="sesion.php" method="post">
         <input type="hidden" name="optContinuar" value="default">
-        <input type="hidden" name="historial" value="historial">
+        <input type="hidden" name="historial" value="">
         <input type="submit" value="Reiniciar Proceso" class="bottonFalta">
     </form>
+
     <h3>Historial de faltas</h3>
-    
-    <?php
+
+    <?php /*
     if (isset($historial)) {
         if ($historial == "historial") {
-    ?>            
-            
-            <table id="tablaFaltas">
-                <tr>
-                    <th>Id</th>
-                    <th>Alumno</th>
-                    <th>Profesor</th>
-                    <th>Cod. gravedad</th>
-                    <th>Falta</th>
-                    <th>Sancion</th>
-                    <th>Circustancia</th>
-                    <th>Fecha</th>
-                    <th>Observacion</th>
-                </tr>
-                <?php
-                for ($i = 0; $i < count($arrayHistorial); $i++) {
-                ?>
-                    <tr><?php
-                        for ($j = 0; $j < count($arrayHistorial[$i]); $j++) {
+    */ ?>
 
-                        ?>
-                            <td><?php echo $arrayHistorial[$i][$j] ?></td>
-                        <?php
-                        } ?>
-                    </tr>
-                <?php
-                }
+    <table id="tablaFaltas">
+        <tr>
+            <th>Id</th>
+            <th>Alumno</th>
+            <th>Profesor</th>
+            <th>Cod. gravedad</th>
+            <th>Falta</th>
+            <th>Sancion</th>
+            <th>Circustancia</th>
+            <th>Fecha</th>
+            <th>Observacion</th>
+        </tr>
+        <?php
+        for ($i = 0; $i < count($arrayHistorial); $i++) {
+        ?>
+            <tr><?php
+                for ($j = 0; $j < count($arrayHistorial[$i]); $j++) {
+
                 ?>
-            </table>
-    <?php
+                    <td><?php echo $arrayHistorial[$i][$j] ?></td>
+                <?php
+                } ?>
+            </tr>
+        <?php
         }
-    } ?>
+        ?>
+    </table>
+    <?php /*
+        }
+    } */ ?>
 
-    <br><button class="back"><a href="login.php" >Volver al inicio</a></button>
+    <br><button class="back"><a href="login.php">Volver al inicio</a></button>
 </body>
+
 </html>
