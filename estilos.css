@@ -2,9 +2,19 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-h2 {
+h1 {
+    color: #125562;
+}
+
+h3 {
+    color: #14737e;
+    margin-top: 2em;
+}
+
+h1,
+h2,
+h3 {
     text-align: center;
-    color: #3e3d53;
 }
 
 form {
@@ -18,25 +28,15 @@ select {
     cursor: pointer;
 }
 
-
-/* boton login */
-
-#enviar {
-    color: #3e3d53;
-    border: 0.1em solid #3e3d53;
-    border-radius: 6px;
-    padding: 6px 8px;
-    display: inline-block;
-    font-size: 14px;
-    transition: ease-out 0.5s;
+textarea {
+    width: 50%;
+    height: 5em;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 1em;
 }
 
-#enviar:hover {
-    box-shadow: inset 400px 0 0 0 #3e3d53;
-    color: #c5c6d0;
-}
-
-#nombreErroneo {
+p {
     text-align: center;
     color: red;
 }
@@ -53,15 +53,100 @@ select {
     font-size: 1.2em;
 }
 
+
+/* boton login */
+
 #enviar {
     width: 20%;
     margin-right: 40%;
     margin-left: 40%;
+    color: #123f50;
+    border: 0.1em solid #123f50;
+    border-radius: 6px;
+    padding: 6px 8px;
+    display: inline-block;
+    font-size: 14px;
+    transition: ease-out 0.5s;
 }
+
+#enviar:hover {
+    box-shadow: inset 400px 0 0 0 #123f50;
+    color: white;
+}
+
+
+/* boton atras */
+
+.back {
+    width: 10%;
+    margin-right: 45%;
+    margin-left: 45%;
+    border: 0.1em solid #17a5a2;
+    border-radius: 6px;
+    padding: 6px 8px;
+    display: inline-block;
+    font-size: 14px;
+    transition: ease-out 0.5s;
+}
+
+.back a {
+    text-decoration: none;
+    color: #125562;
+}
+
+.back:hover {
+    box-shadow: inset 400px 0 0 0 #17a5a2;
+}
+
+.back a:hover {
+    color: white;
+}
+
+
+/* Actualizar historial y Continuar */
+
+.bottonFalta {
+    width: 20%;
+    margin-top: 1em;
+    margin-right: 40%;
+    margin-left: 40%;
+    padding: 2px 4px;
+    border: 0.1em solid gray;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+
+/* Tabla */
 
 table {
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
     margin-top: 1em;
+}
+
+th {
+    background-color: #125562;
+    color: white;
+    width: 6%;
+    font-size: 0.9em;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+}
+
+td {
+    background-color: #14737e;
+    color: whitesmoke;
+    text-align: center;
+    font-size: 0.85em;
+    padding: 0.5em 0.4em 0.4em 0.5em;
+}
+
+select {
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    height: 2em;
+    margin-top: 0.5em;
 }

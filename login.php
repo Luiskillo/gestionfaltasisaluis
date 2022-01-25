@@ -13,7 +13,7 @@
     <?php
     session_start();
     ?>
-    <h2>BBDD Faltas Instituto - Inicio de sesión</h2>
+    <h1>BBDD Faltas Instituto - Inicio de sesión</h1>
 
     <form action="sesion.php" method="post">
         <input type="hidden" name="option" value="inicio_sesion" />
@@ -29,7 +29,7 @@
     if (isset($_SESSION["usarioCorrecto"])) {
         if ($_SESSION["usarioCorrecto"] == false) {
     ?>
-            <p id="nombreErroneo">El nombre introducido no es correcto o el campo no ha sido rellenado</p>
+            <p>El nombre introducido no es correcto o el campo no ha sido rellenado</p>
     <?php
         }
     }

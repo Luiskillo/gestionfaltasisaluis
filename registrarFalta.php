@@ -82,10 +82,10 @@
 
     ?>
 
-    <h2>Hola <?php echo $nombre ?></h2>
+    <h1>Hola <?php echo $nombre ?></h1>
 
     <form action="sesion.php" method="post">
-
+    <h3>Agregar nueva falta</h3>
         <?php
 
         switch ($optContinuar) {
@@ -97,7 +97,7 @@
                         <option value="<?php print_r($arrayGrupos[$i][0])  ?>"><?php print_r($arrayGrupos[$i][0]) ?></option>
                     <?php } ?>
                 </select>
-                <input type="submit" value="Continuar">
+                <input type="submit" value="Continuar" class="bottonFalta">
             <?php
                 break;
             case "continuar": ?>
@@ -132,7 +132,7 @@
                         <option value="<?php print_r($arrayCircustancia[$i][0])  ?>"><?php print_r($arrayCircustancia[$i][0]) ?></option>
                     <?php } ?>
                 </select>
-                <input type="submit" value="Continuar">
+                <input type="submit" value="Continuar" class="bottonFalta">
             <?php
                 break;
             case "continuar2": ?>
@@ -154,9 +154,9 @@
                     }
                     ?>
                 </select> <br>
-                <textarea name="observacion" maxlength="240"></textarea><br>
+                <textarea name="observacion" maxlength="240" placeholder="Observaciones"></textarea><br>
 
-                <input type="submit" value="Finalizar">
+                <input type="submit" value="Finalizar" class="bottonFalta">
 
             <?php
                 break;
@@ -181,9 +181,9 @@
 
                 <?php
                 if ($insertarFalta) {
-                    echo "falta agregada correctamente";
+                    echo "<p>Falta agregada correctamente</p>";
                 } else {
-                    echo "error";
+                    echo "<p>Error al introducir los datos</p>";
                 }
                 ?>
         <?php
@@ -196,24 +196,26 @@
     <form action="sesion.php" method="post">
         <input type="hidden" name="optContinuar" value="default">
         <input type="hidden" name="historial" value="historial">
-        <input type="submit" value="Ver Historial">
+        <input type="submit" value="Reiniciar Proceso" class="bottonFalta">
     </form>
+    <h3>Historial de faltas</h3>
+    
     <?php
     if (isset($historial)) {
         if ($historial == "historial") {
-    ?>
+    ?>            
             
             <table id="tablaFaltas">
                 <tr>
                     <th>Id</th>
                     <th>Alumno</th>
                     <th>Profesor</th>
-                    <th>Cod_gravedad</th>
+                    <th>Cod. gravedad</th>
                     <th>Falta</th>
                     <th>Sancion</th>
                     <th>Circustancia</th>
                     <th>Fecha</th>
-                    <th>observacion</th>
+                    <th>Observacion</th>
                 </tr>
                 <?php
                 for ($i = 0; $i < count($arrayHistorial); $i++) {
@@ -230,16 +232,10 @@
                 }
                 ?>
             </table>
-            </div>
     <?php
         }
     } ?>
 
-
-
-
-    <br><button><a href="login.php">Volver al inicio</a></button>
-
+    <br><button class="back"><a href="login.php" >Volver al inicio</a></button>
 </body>
-
 </html>
