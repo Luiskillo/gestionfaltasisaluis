@@ -23,6 +23,7 @@ switch ($opt) {
                 $_SESSION["opt_user"] = "dir";
                 $_SESSION["nombre"] = $arrayNombreProf[0][0];
                 $_SESSION["usarioCorrecto"] = true;
+                $_SESSION["optContinuar"] = "default";
 
                 $url = "registrarFalta.php";
                 redirect($url);
@@ -30,6 +31,7 @@ switch ($opt) {
                 $_SESSION["opt_user"] = "prof";
                 $_SESSION["nombre"] = $arrayNombreProf[0][0];
                 $_SESSION["usarioCorrecto"] = true;
+                $_SESSION["optContinuar"] = "default";
 
                 $url = "registrarFalta.php";
                 redirect($url);
